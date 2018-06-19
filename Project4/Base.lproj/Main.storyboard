@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="60b-6H-d05">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="8UD-iW-L5U">
+            <objects>
+                <collectionViewController storyboardIdentifier="News" id="URO-ou-0Jf" customClass="ViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nsa-EE-Uip">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="100" minimumInteritemSpacing="80" id="egH-Z0-7Fi">
+                            <size key="itemSize" width="375" height="375"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="80" minY="80" maxX="80" maxY="80"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="epu-sG-7En" customClass="NewsCell" customModule="Project4" customModuleProvider="target">
+                                <rect key="frame" x="80" y="80" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67Y-yW-eTI" customClass="RemoteImageView" customModule="Project4" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="210" id="uLk-kS-BN5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a long news story title with lots of text inside" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3d-6B-Yia">
+                                            <rect key="frame" x="0.0" y="225" width="375" height="138"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="F3d-6B-Yia" secondAttribute="trailing" id="Bc0-vg-Rir"/>
+                                    <constraint firstItem="67Y-yW-eTI" firstAttribute="top" secondItem="epu-sG-7En" secondAttribute="top" id="XBf-eB-gDR"/>
+                                    <constraint firstItem="F3d-6B-Yia" firstAttribute="top" secondItem="67Y-yW-eTI" secondAttribute="bottom" constant="15" id="gXJ-UJ-pIk"/>
+                                    <constraint firstItem="F3d-6B-Yia" firstAttribute="leading" secondItem="epu-sG-7En" secondAttribute="leading" id="iX3-Xd-Bct"/>
+                                    <constraint firstAttribute="trailing" secondItem="67Y-yW-eTI" secondAttribute="trailing" id="tcV-zG-MNX"/>
+                                    <constraint firstItem="67Y-yW-eTI" firstAttribute="leading" secondItem="epu-sG-7En" secondAttribute="leading" id="vaS-X2-bol"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="67Y-yW-eTI" id="9hR-Xa-GKa"/>
+                                    <outlet property="textLabel" destination="F3d-6B-Yia" id="Quo-PC-Ug3"/>
+                                    <outlet property="unfocusedConstraint" destination="gXJ-UJ-pIk" id="U8R-pP-XS5"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="URO-ou-0Jf" id="Z5q-uh-lzp"/>
+                            <outlet property="delegate" destination="URO-ou-0Jf" id="uTY-Ox-jAF"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="dKO-vM-2ty"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ej7-jY-HLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008" y="-440"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IcH-1H-usx">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="60b-6H-d05" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2GA-cD-4oI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZI-IG-tk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="-440"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="E5F-6I-62u">
+            <objects>
+                <viewController storyboardIdentifier="Reader" id="JNZ-M9-R1P" customClass="ReaderViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KZc-aa-BXl"/>
+                        <viewControllerLayoutGuide type="bottom" id="e4q-4i-6Bo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NdS-sJ-yAG">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Lo-iQY">
+                                <rect key="frame" x="100" y="80" width="1700" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8B-5f-fet" customClass="RemoteImageView" customModule="Project4" customModuleProvider="target">
+                                <rect key="frame" x="100" y="310" width="375" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRs-YG-QFn">
+                                <rect key="frame" x="535" y="280" width="1300" height="800"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="body" destination="WRs-YG-QFn" id="cKK-vI-IPT"/>
+                        <outlet property="headline" destination="U6L-Lo-iQY" id="XmG-8M-trz"/>
+                        <outlet property="imageView" destination="n8B-5f-fet" id="xNI-KS-XSY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67V-XP-xYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="1043"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loading" width="375" height="210"/>
+    </resources>
+</document>
